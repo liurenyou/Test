@@ -1,4 +1,4 @@
-package Text;
+package test;
 
 import java.util.ArrayList;
 import java.util.Collections;

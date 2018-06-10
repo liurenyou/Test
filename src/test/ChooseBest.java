@@ -1,4 +1,4 @@
-package Text;
+package test;
 import java.util.Scanner;
 public class ChooseBest {
 
