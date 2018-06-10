@@ -15,7 +15,7 @@ public class FolderName {
 		getAllFileName(path, null);
 	}
 
-	public static void getAllFileName(String path, String name) {
+	public static void getAllFileName(String path, StringBuffer name) {
 		File f = new File(path);
 		if (f.isFile()) {
 			System.out.println("该路径为文件");
@@ -23,14 +23,15 @@ public class FolderName {
 		} else {
 			String[] fileNames = f.list();
 			File[] files = f.listFiles();
-			String fileName = name + "/" + f.getName();
-			System.out.println("--------" + fileName.substring(5) + "--------");
+			StringBuffer folderName = new StringBuffer();
+			folderName.append(name).append("/").append(f.getName());
+			System.out.println("--------" + folderName.substring(5) + "--------");
 			for (String s : fileNames) {
 				System.out.println(s);
 			}
 			for (File a : files) {
 				if (a.isDirectory()) {
-					getAllFileName(a.toString(), fileName);
+					getAllFileName(a.toString(), folderName);
 				}
 			}
 		}
